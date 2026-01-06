@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>منصة الترقيات | نظام الخيرات الموحد</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'gold-main': 'var(--accent-color)',
+              'navy-deep': 'var(--bg-deep)',
+            },
+            screens: {
+              'xs': '480px',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --accent-color: #b8860b;
+        --accent-glow: rgba(184, 134, 11, 0.2);
+        --bg-deep: #020617;
+        --royal-grad: linear-gradient(135deg, #926b08 0%, #b8860b 50%, #d4af37 100%);
+      }
+
+      [data-theme='sapphire'] {
+        --accent-color: #1e40af;
+        --accent-glow: rgba(30, 64, 175, 0.2);
+        --royal-grad: linear-gradient(135deg, #172554 0%, #1e40af 50%, #3b82f6 100%);
+      }
+
+      [data-theme='emerald'] {
+        --accent-color: #065f46;
+        --accent-glow: rgba(6, 95, 70, 0.2);
+        --royal-grad: linear-gradient(135deg, #022c22 0%, #065f46 50%, #10b981 100%);
+      }
+
+      [data-theme='ruby'] {
+        --accent-color: #991b1b;
+        --accent-glow: rgba(153, 27, 27, 0.2);
+        --royal-grad: linear-gradient(135deg, #450a0a 0%, #991b1b 50%, #ef4444 100%);
+      }
+
+      [data-theme='midnight'] {
+        --accent-color: #334155;
+        --accent-glow: rgba(51, 65, 85, 0.2);
+        --royal-grad: linear-gradient(135deg, #020617 0%, #334155 50%, #94a3b8 100%);
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-color) transparent;
+      }
+
+      body {
+        font-family: 'Cairo', sans-serif;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100dvh;
+        width: 100vw;
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .dark body { background-color: #020617; }
+
+      .tech-grid {
+        background-image: radial-gradient(circle at 1px 1px, var(--accent-glow) 1px, transparent 0);
+        background-size: 32px 32px;
+      }
+
+      .royal-gold-gradient {
+        background: var(--royal-grad);
+      }
+
+      .gold-text {
+        background: var(--royal-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: none;
+        border-radius: 2.5rem;
+      }
+
+      .dark .glass-card {
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--accent-color);
+        border-radius: 10px;
+      }
+
+      .animate-fade-in { animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "exceljs": "https://esm.sh/exceljs@^4.4.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
